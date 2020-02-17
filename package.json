@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "add": "^2.0.6",
+    "axios": "^0.19.2",
     "immutable": "^4.0.0-rc.12",
     "normalizr": "^3.5.0",
     "ramda": "^0.27.0",
@@ -17,7 +19,8 @@
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,5 +45,8 @@
   },
   "engines": {
     "node": "10.16.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
   }
 }

@@ -4,18 +4,19 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react' 
 import { BrowserRouter } from 'react-router-dom';
 import configStore from 'redux/store';
+import { BASE_PATH } from 'config/constants';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import './index.scss';
 
 const { store, persistor } = configStore();
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={'loading'} persistor={persistor}>
-      <BrowserRouter basename="">
+      <BrowserRouter basename={BASE_PATH}>
         <App />
       </BrowserRouter>
     </PersistGate>

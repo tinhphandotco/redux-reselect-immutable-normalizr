@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import configStore from 'redux/store';
 import { BASE_PATH } from 'config/constants';
 
-import App from './App';
+import Root from 'pages/Root';
 import * as serviceWorker from './serviceWorker';
 
 import './index.scss';
@@ -17,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={'loading'} persistor={persistor}>
       <BrowserRouter basename={BASE_PATH}>
-        <App />
+        <Root />
       </BrowserRouter>
     </PersistGate>
   </Provider>

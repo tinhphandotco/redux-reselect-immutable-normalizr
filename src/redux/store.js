@@ -9,7 +9,7 @@ const persistConfig = {
   key: 'redux-reselect-immutable-normalizr',
   storage, // localStorage
   // blacklist: ['session'],
-  // whitelist: ['auth', 'category', 'error', 'video'],
+  whitelist: ['auth'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

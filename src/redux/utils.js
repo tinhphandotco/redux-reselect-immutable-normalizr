@@ -13,6 +13,16 @@ export const createRequestPending = (action) => ({ type: actionPending(action) }
 export const createRequestSuccess = (action, payload) => ({ type: actionSuccess(action), payload });
 export const createRequestFailure = (action, errors) => ({ type: actionFailure(action), payload: errors });
 
+export const createReducer = (initialState, handlers) => {
+  return function reducer(state = initialState, action) {
+    if (handlers.hasOwnProperty(action.type)) {
+      return handlers[action.type](state, action)
+    } else {
+      return state
+    }
+  }
+}
+
 export const requestAction = (
   action,
   apiCall,
@@ -23,10 +33,12 @@ export const requestAction = (
   dispatch(createRequestPending(action));
 
   return apiCall(params).then(res => {
-    dispatch(createRequestSuccess(action, normalizePayload(res)));
-    return Promise.resolve(normalizePayload(res));
+    const payload = normalizePayload(res);
+    dispatch(createRequestSuccess(action, payload));
+    return Promise.resolve(payload);
   }).catch(err => {
-    dispatch(createRequestFailure(action, normalizeError(err)));
-    return Promise.reject(normalizeError(err));
+    const errors = normalizeError(err);
+    dispatch(createRequestFailure(action, errors));
+    return Promise.reject(errors);
   });
 };

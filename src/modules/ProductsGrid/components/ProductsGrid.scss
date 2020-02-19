@@ -1,0 +1,9 @@
+.products-grid {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 90vh;
+  overflow: auto;
+}

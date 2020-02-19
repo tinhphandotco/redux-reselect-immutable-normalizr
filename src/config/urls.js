@@ -1,4 +1,4 @@
-import { BASE_PATH, SERVER_URL } from './index';
+import { BASE_PATH, API_URL } from './index';
 
 export const staticUrl = (url) => `/${BASE_PATH}/${url}`;
-export const mediaUrl = (url) => `${SERVER_URL}/${url}`;
+export const mediaUrl = (url) => `${API_URL}/${url}`;

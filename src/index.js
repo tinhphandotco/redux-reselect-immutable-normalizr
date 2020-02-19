@@ -13,6 +13,8 @@ import './index.scss';
 
 const { store, persistor } = configStore();
 
+export const _store = store;
+
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={'loading'} persistor={persistor}>
